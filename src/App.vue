@@ -1,12 +1,9 @@
 <template>
-    <!-- <sign-in></sign-in> -->
-    <sign-up></sign-up>
+    <router-view></router-view>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router';
-import SignIn from '@/components/signIn.vue'
-import SignUp from '@/components/signUp.vue'
+import { RouterView } from 'vue-router';
 </script>
 
 <style>
@@ -16,62 +13,16 @@ import SignUp from '@/components/signUp.vue'
   @apply text-center py-10
 }
 
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
 @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
+    justify-content: center;
   }
 
   #app {
-    display: grid;
+    margin: 0 auto;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
@@ -86,19 +37,6 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>
