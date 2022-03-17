@@ -1,10 +1,12 @@
 <template>
-    <p class="text-2xl text-green-500">Home</p>
-    <p class="text-3xl text-blue-500">About</p>
+    <!-- <sign-in></sign-in> -->
+    <sign-up></sign-up>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router';
+import SignIn from '@/components/signIn.vue'
+import SignUp from '@/components/signUp.vue'
 </script>
 
 <style>
