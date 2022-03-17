@@ -1,11 +1,13 @@
 module.exports = {
-  purge: ['./index.html','./src/**/*.{vue,js,ts}'],
+  content: ['./index.html','./src/**/*.{vue,js,ts}'],
   mode: 'jit',
-  content: [],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // ...
+    require('@tailwindcss/forms'),
+  ],
   corePlugins: {
     preflight: false
   }
