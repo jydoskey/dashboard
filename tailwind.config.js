@@ -1,5 +1,7 @@
 module.exports = {
-  content: ['./index.html','./src/**/*.{vue,js,ts}'],
+  content: [
+    './index.html','./src/**/*.{vue,js,ts}'
+  ],
   mode: 'jit',
   theme: {
     container: {
@@ -7,7 +9,6 @@ module.exports = {
     },
   },
   plugins: [
-    // ...
     require('@tailwindcss/forms'),
   ],
   corePlugins: {
