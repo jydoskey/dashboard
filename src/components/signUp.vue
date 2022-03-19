@@ -8,55 +8,205 @@
         </div>
       </div>
       <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form @submit="submit($event)">
           <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
-              <div class="grid grid-cols-6 gap-6 ">
+              <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
-                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                  <label
+                    for="first-name"
+                    class="block text-sm font-medium text-gray-700"
+                    >First name</label
+                  >
+                  <input
+                    v-model="firstName"
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    autocomplete="given-name"
+                    class="
+                      mt-1
+                      focus:ring-indigo-500 focus:border-indigo-500
+                      block
+                      w-full
+                      shadow-sm
+                      sm:text-sm
+                      border-gray-300
+                      rounded-md
+                    "
+                  />
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
-                  <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                  <label
+                    for="last-name"
+                    class="block text-sm font-medium text-gray-700"
+                    >Last name</label
+                  >
+                  <input
+                    v-model="lastName"
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    autocomplete="family-name"
+                    class="
+                      mt-1
+                      focus:ring-indigo-500 focus:border-indigo-500
+                      block
+                      w-full
+                      shadow-sm
+                      sm:text-sm
+                      border-gray-300
+                      rounded-md
+                    "
+                  />
                 </div>
 
                 <div class="col-span-6 sm:col-span-4 block">
-                  <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-                  <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                  <label
+                    for="email-address"
+                    class="block text-sm font-medium text-gray-700"
+                    >Email address</label
+                  >
+                  <input
+                    v-model="email"
+                    type="text"
+                    name="email-address"
+                    id="email-address"
+                    autocomplete="email"
+                    class="
+                      mt-1
+                      focus:ring-indigo-500 focus:border-indigo-500
+                      block
+                      w-full
+                      shadow-sm
+                      sm:text-sm
+                      border-gray-300
+                      rounded-md
+                    "
+                  />
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="continent" class="block text-sm font-medium text-gray-700">Continent</label>
-                  <select id="continent" name="continent" autocomplete="continent-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="">Africa</option>
-                    <option value="">Antarctica</option>
-                    <option value="">Asia</option>
-                    <option value="">Australia</option>
-                    <option value="">Europe</option>
-                    <option value="">North America</option>
-                    <option value="">South AMerica</option>
+                  <label
+                    for="continent"
+                    class="block text-sm font-medium text-gray-700"
+                    >Continent</label
+                  >
+                  <select
+                    v-model="continent"
+                    id="continent"
+                    name="continent"
+                    autocomplete="continent-name"
+                    class="
+                      mt-1
+                      block
+                      w-full
+                      py-2
+                      px-3
+                      border border-gray-300
+                      bg-white
+                      rounded-md
+                      shadow-sm
+                      focus:outline-none
+                      focus:ring-indigo-500
+                      focus:border-indigo-500
+                      sm:text-sm
+                    "
+                  >
+                    <option value="0">Choose...</option>
+                    <option value="1">Africa</option>
+                    <option value="2">Antarctica</option>
+                    <option value="3">Asia</option>
+                    <option value="4">Australia</option>
+                    <option value="5">Europe</option>
+                    <option value="6">North America</option>
+                    <option value="7">South AMerica</option>
                   </select>
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
-                  <select id="gender" name="gender" autocomplete="gender-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="">Male</option>
-                    <option value="">Female</option>
+                  <label
+                    for="gender"
+                    class="block text-sm font-medium text-gray-700"
+                    >Gender</label
+                  >
+                  <select
+                    v-model="gender"
+                    id="gender"
+                    name="gender"
+                    autocomplete="gender-name"
+                    class="
+                      mt-1
+                      block
+                      w-full
+                      py-2
+                      px-3
+                      border border-gray-300
+                      bg-white
+                      rounded-md
+                      shadow-sm
+                      focus:outline-none
+                      focus:ring-indigo-500
+                      focus:border-indigo-500
+                      sm:text-sm
+                    "
+                  >
+                    <option value="0">Choose...</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
                   </select>
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                  <input type="text" name="password" id="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                  <label
+                    for="password"
+                    class="block text-sm font-medium text-gray-700"
+                    >Password</label
+                  >
+                  <input
+                    v-model="password"
+                    type="text"
+                    name="password"
+                    id="password"
+                    class="
+                      mt-1
+                      focus:ring-indigo-500 focus:border-indigo-500
+                      block
+                      w-full
+                      shadow-sm
+                      sm:text-sm
+                      border-gray-300
+                      rounded-md
+                    "
+                  />
                 </div>
-
               </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 text-center sm:px-6">
-              <button type="submit" class="inline-flex justify-center py-3 px-10 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create Account</button>
+              <button
+                type="submit"
+                class="
+                  inline-flex
+                  justify-center
+                  py-3
+                  px-10
+                  border border-transparent
+                  shadow-sm
+                  text-sm
+                  font-medium
+                  rounded-md
+                  text-white
+                  bg-indigo-500
+                  hover:bg-indigo-700
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:ring-indigo-500
+                "
+              >
+                Create Account
+              </button>
             </div>
           </div>
         </form>
@@ -68,24 +218,44 @@
 
 <script>
 export default {
-    name: 'DashboardSignup',
+  name: "DashboardSignup",
 
-    data() {
-        return {
-            
-        };
-    },
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      email: "",
+      continent: "",
+      gender: "",
+      password: "",
+    };
+  },
 
-    mounted() {
-        
+  methods: {
+    submit(event) {
+      event.preventDefault();
+      var payload = {
+        email: this.email,
+        password: this.password,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        gender: this.gender,
+        continent: this.continent,
+      };
+      this.axios
+        .post("/register", payload)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
+  },
 
-    methods: {
-        
-    },
+  mounted() {},
 };
 </script>
 
 <style lang="scss" scoped>
-
 </style>
