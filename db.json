@@ -1,5 +1,13 @@
 {
-    "users": [
-        
-    ]
-  }
+  "users": [
+    {
+      "email": "jideomotola33@gmail.com",
+      "password": "$2a$10$Sk0ZA1hOxxvL0D2QGzzEm.4g7/1wIghbjHFvB5pC57xWTltsrP23i",
+      "firstName": "OLAJIDE",
+      "lastName": "OMOTOLA",
+      "gender": "1",
+      "continent": "2",
+      "id": 1
+    }
+  ]
+}
