@@ -122,7 +122,7 @@
                   h-5
                   w-5
                   text-indigo-500
-                  group-hover:text-indigo-400
+                  hover:text-indigo-400
                   focus:cursor-pointer
                 "
                 aria-hidden="true"
@@ -154,7 +154,7 @@ export default {
         password: this.password,
       };
       this.axios
-        .post("/login", payload)
+        .post("http://localhost:3000/login", payload)
         .then((response) => {
           console.log(response);
         })

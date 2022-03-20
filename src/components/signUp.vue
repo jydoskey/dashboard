@@ -114,7 +114,7 @@
                       sm:text-sm
                     "
                   >
-                    <option value="0">Choose...</option>
+                    <!-- <option value="0" default>Choose...</option> -->
                     <option value="1">Africa</option>
                     <option value="2">Antarctica</option>
                     <option value="3">Asia</option>
@@ -166,7 +166,7 @@
                   >
                   <input
                     v-model="password"
-                    type="text"
+                    type="password"
                     name="password"
                     id="password"
                     class="
@@ -243,7 +243,7 @@ export default {
         continent: this.continent,
       };
       this.axios
-        .post("/register", payload)
+        .post("http://localhost:3000/register", payload)
         .then((response) => {
           console.log(response);
         })
