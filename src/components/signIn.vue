@@ -153,10 +153,13 @@ export default {
         email: this.email,
         password: this.password,
       };
+      var url = window.location.origin;
       this.axios
-        .post("http://localhost:3000/login", payload)
+        .post( url + "/login", payload)
         .then((response) => {
           console.log(response);
+          this.email = "",
+          this.password = ""
         })
         .catch((error) => {
           console.log(error);
