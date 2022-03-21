@@ -114,14 +114,14 @@
                       sm:text-sm
                     "
                   >
-                    <!-- <option value="0" default>Choose...</option> -->
-                    <option value="1">Africa</option>
-                    <option value="2">Antarctica</option>
-                    <option value="3">Asia</option>
-                    <option value="4">Australia</option>
-                    <option value="5">Europe</option>
-                    <option value="6">North America</option>
-                    <option value="7">South AMerica</option>
+                    <option value="" disabled>Choose...</option>
+                    <option
+                      :value="world.value"
+                      v-for="world in worlds"
+                      :key="world.value"
+                    >
+                      {{ world.text }}
+                    </option>
                   </select>
                 </div>
 
@@ -152,9 +152,9 @@
                       sm:text-sm
                     "
                   >
-                    <option value="0">Choose...</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                    <option value="" disabled>Choose...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                 </div>
 
@@ -228,6 +228,15 @@ export default {
       continent: "",
       gender: "",
       password: "",
+      worlds: [
+        { value: "Africa", text: "Africa" },
+        { value: "Antarctica", text: "Antarctica" },
+        { value: "Asia", text: "Asia" },
+        { value: "Australia", text: "Australia" },
+        { value: "Europe", text: "Europe" },
+        { value: "North America", text: "North America" },
+        { value: "South America", text: "South America" },
+      ],
     };
   },
 
@@ -242,10 +251,18 @@ export default {
         gender: this.gender,
         continent: this.continent,
       };
+      var url = window.location.origin;
       this.axios
-        .post("http://localhost:3000/register", payload)
+        .post(url + "/register", payload)
         .then((response) => {
           console.log(response);
+          (this.email = ""),
+            (this.password = ""),
+            (this.firstName = ""),
+            (this.lastName = ""),
+            (this.gender = ""),
+            (this.continent = "");
+            this.$router.push("/");
         })
         .catch((error) => {
           console.log(error);
