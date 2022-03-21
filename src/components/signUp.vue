@@ -24,6 +24,7 @@
                     name="first-name"
                     id="first-name"
                     autocomplete="given-name"
+                    placeholder="firstname"
                     class="
                       mt-1
                       focus:ring-indigo-500 focus:border-indigo-500
@@ -47,6 +48,7 @@
                     v-model="lastName"
                     type="text"
                     name="last-name"
+                    placeholder="lastname"
                     id="last-name"
                     autocomplete="family-name"
                     class="
@@ -71,6 +73,7 @@
                   <input
                     v-model="email"
                     type="text"
+                    placeholder="email"
                     name="email-address"
                     id="email-address"
                     autocomplete="email"
@@ -168,6 +171,7 @@
                     v-model="password"
                     type="password"
                     name="password"
+                    placeholder="password"
                     id="password"
                     class="
                       mt-1
@@ -200,6 +204,7 @@
                   bg-indigo-500
                   hover:bg-indigo-700
                   focus:outline-none
+                  cursor-pointer
                   focus:ring-2
                   focus:ring-offset-2
                   focus:ring-indigo-500

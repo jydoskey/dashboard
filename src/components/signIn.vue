@@ -114,6 +114,7 @@
               focus:ring-2
               focus:ring-offset-2
               focus:ring-indigo-500
+              cursor-pointer
             "
           >
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
