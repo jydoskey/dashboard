@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './index.html','./src/**/*.{vue,js,ts}'
+    './index.html', './src/**/*.{vue,js,ts}'
   ],
   mode: 'jit',
   theme: {
@@ -14,4 +14,4 @@ module.exports = {
   corePlugins: {
     preflight: false
   }
-}
+};
