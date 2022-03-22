@@ -117,18 +117,6 @@
               cursor-pointer
             "
           >
-            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-              <LockClosedIcon
-                class="
-                  h-5
-                  w-5
-                  text-indigo-500
-                  hover:text-indigo-400
-                  focus:cursor-pointer
-                "
-                aria-hidden="true"
-              />
-            </span>
             Sign in
           </button>
         </div>
@@ -148,7 +136,7 @@ export default {
     };
   },
   methods: {
-      submit(event) {
+    submit(event) {
       event.preventDefault();
       var payload = {
         email: this.email,
@@ -156,11 +144,10 @@ export default {
       };
       var url = window.location.origin;
       this.axios
-        .post( url + "/login", payload)
+        .post(url + "/login", payload)
         .then((response) => {
           console.log(response);
-          this.email = "",
-          this.password = ""
+          (this.email = ""), (this.password = "");
         })
         .catch((error) => {
           console.log(error);

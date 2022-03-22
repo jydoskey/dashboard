@@ -22,6 +22,7 @@
                     v-model="firstName"
                     type="text"
                     name="first-name"
+                    required
                     id="first-name"
                     autocomplete="given-name"
                     placeholder="firstname"
@@ -48,6 +49,7 @@
                     v-model="lastName"
                     type="text"
                     name="last-name"
+                    required
                     placeholder="lastname"
                     id="last-name"
                     autocomplete="family-name"
@@ -74,6 +76,7 @@
                     v-model="email"
                     type="text"
                     placeholder="email"
+                    required
                     name="email-address"
                     id="email-address"
                     autocomplete="email"
@@ -100,6 +103,7 @@
                     v-model="continent"
                     id="continent"
                     name="continent"
+                    required
                     autocomplete="continent-name"
                     class="
                       mt-1
@@ -138,6 +142,7 @@
                     v-model="gender"
                     id="gender"
                     name="gender"
+                    required
                     autocomplete="gender-name"
                     class="
                       mt-1
@@ -171,6 +176,7 @@
                     v-model="password"
                     type="password"
                     name="password"
+                    required
                     placeholder="password"
                     id="password"
                     class="
@@ -205,9 +211,7 @@
                   hover:bg-indigo-700
                   focus:outline-none
                   cursor-pointer
-                  focus:ring-2
-                  focus:ring-offset-2
-                  focus:ring-indigo-500
+                  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
                 "
               >
                 Create Account
@@ -267,7 +271,7 @@ export default {
             (this.lastName = ""),
             (this.gender = ""),
             (this.continent = "");
-            this.$router.push("/");
+          this.$router.push("/");
         })
         .catch((error) => {
           console.log(error);
