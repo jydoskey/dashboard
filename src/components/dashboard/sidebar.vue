@@ -237,6 +237,11 @@ ul {
   padding-inline-start: 0;
 }
 
+input[type="search"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .sidebar li a {
   height: 100%;
   width: 100%;
