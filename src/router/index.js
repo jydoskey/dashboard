@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
-	{
+  {
     path: '/',
     name: 'DashboardSignin',
     component: () => import('@/components/signIn.vue')
@@ -14,8 +14,8 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'DashboardSidebar',
-    component: () =>  import('@/components/dashboard/sidebar.vue')
+    name: 'DashboardHomepage',
+    component: () => import('@/components/HomePage.vue')
   }
 ];
 
