@@ -104,6 +104,11 @@ export default {
 
       modeSwitch.addEventListener("click", () => {
         body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light Mode";
+        } else {
+          modeText.innerText = "Dark Mode";
+        }
       });
     },
   },
@@ -208,7 +213,7 @@ header .image-text .header-text {
   position: absolute;
   top: 50%;
   right: -25px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(180deg);
   height: 25px;
   width: 25px;
   background: var(--primary-color);
@@ -218,10 +223,21 @@ header .image-text .header-text {
   border-radius: 50%;
   color: var(--sidebar-color);
   font-size: 22px;
+  transition: var(--tran-03);
+}
+
+.sidebar.close header .toggle {
+  transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+  transform: rotate(180deg);
+  color: var(--text-color);
 }
 
 .sidebar .search-box {
   background: var(--primary-color-light);
+  border-radius: 6px;
 }
 
 .search-box input {
@@ -261,6 +277,11 @@ input[type="search"] {
   color: var(--sidebar-color);
 }
 
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+  color: var(--text-color);
+}
+
 .sidebar .menu-bar {
   height: calc(100% - 50px);
   display: flex;
@@ -289,6 +310,14 @@ input[type="search"] {
   opacity: 0;
 }
 
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
 .menu-bar .mode .toggle-switch {
   position: absolute;
   display: flex;
@@ -298,6 +327,8 @@ input[type="search"] {
   justify-content: center;
   cursor: pointer;
   right: 0;
+  border-radius: 6px;
+  background: var(--primary-color-light);
 }
 
 .toggle-switch .switch {
@@ -323,5 +354,9 @@ input[type="search"] {
 
 body.dark .switch::before {
   left: 24px;
+}
+
+body.dark .sidebar header .toggle {
+  color: var(--text-color);
 }
 </style>
