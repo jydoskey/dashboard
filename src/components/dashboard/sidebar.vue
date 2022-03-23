@@ -1,14 +1,14 @@
 <template>
   <div id="sidebar">
-    <nav class="sidebar">
+    <nav class="sidebar close">
       <header>
         <div class="image-text">
           <span class="image">
             <img src="@/assets/dashboard-logo.png" alt="logo" />
           </span>
           <div class="header header-text">
-            <span class="name">Dashboard</span>
-            <span class="profession">Web Developer</span>
+            <span class="name text">Dashboard</span>
+            <span class="profession text">Web Developer</span>
           </div>
         </div>
         <i class="bx bx-chevron-right toggle"></i>
@@ -89,9 +89,28 @@ export default {
     return {};
   },
 
-  mounted() {},
+  methods: {
+    elementQuery() {
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector(".sidebar"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
 
-  methods: {},
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+
+      modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+      });
+    },
+  },
+
+  mounted() {
+    this.elementQuery();
+  },
 };
 </script>
 
@@ -109,6 +128,11 @@ header {
   width: 250px;
   padding: 10px 14px;
   background: var(--sidebar-color);
+  transition: var(--tran-05);
+}
+
+.sidebar.close {
+  width: 88px;
 }
 
 /* Reusable Code */
@@ -116,6 +140,13 @@ header {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-color);
+  transition: var(--tran-03);
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
 }
 
 .sidebar .image {
@@ -233,6 +264,8 @@ ul {
 }
 
 .menu-bar .mode {
+  position: relative;
+  border-radius: 6px;
   background: var(--primary-color-light);
 }
 
@@ -252,11 +285,14 @@ ul {
 }
 
 .menu-bar .mode .toggle-switch {
+  position: absolute;
   display: flex;
   height: 100%;
   min-width: 60px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  right: 0;
 }
 
 .toggle-switch .switch {
@@ -265,5 +301,22 @@ ul {
   width: 44px;
   border-radius: 25px;
   background: var(--toggle-color);
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+  left: 24px;
 }
 </style>
