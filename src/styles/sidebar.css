@@ -1,3 +1,7 @@
+body {
+    background: var(--body-color);
+}
+
 header {
     padding: 0;
   }
