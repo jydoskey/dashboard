@@ -94,7 +94,7 @@ export default {
       const body = document.querySelector("body"),
         sidebar = body.querySelector(".sidebar"),
         toggle = body.querySelector(".toggle"),
-        searchBtn = body.querySelector(".search-box"),
+        // searchBtn = body.querySelector(".search-box"),
         modeSwitch = body.querySelector(".toggle-switch"),
         modeText = body.querySelector(".mode-text");
 
@@ -104,6 +104,11 @@ export default {
 
       modeSwitch.addEventListener("click", () => {
         body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light Mode";
+        } else {
+          modeText.innerText = "Dark Mode";
+        }
       });
     },
   },
@@ -114,209 +119,6 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-header {
-  padding: 0;
-}
-
-/* Sidebar */
-.sidebar {
-  top: 0;
-  left: 0;
-  position: fixed;
-  height: 100%;
-  width: 250px;
-  padding: 10px 14px;
-  background: var(--sidebar-color);
-  transition: var(--tran-05);
-}
-
-.sidebar.close {
-  width: 88px;
-}
-
-/* Reusable Code */
-.sidebar .text {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-color);
-  transition: var(--tran-03);
-  white-space: nowrap;
-  opacity: 1;
-}
-
-.sidebar.close .text {
-  opacity: 0;
-}
-
-.sidebar .image {
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-}
-
-.sidebar li {
-  height: 50px;
-  margin-top: 10px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.sidebar li .icon {
-  font-size: 20px;
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar li .icon,
-.sidebar li .text {
-  color: var(--text-color);
-  transition: var(--tran-02);
-}
-
-.sidebar header {
-  position: relative;
-}
-
-.sidebar .image-text img {
-  width: 40px;
-  border-radius: 6px;
-}
-
-.sidebar header .image-text {
-  display: flex;
-  align-items: center;
-}
-
-header .image-text .header-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-text .name {
-  font-weight: 600;
-}
-
-.header-text .profession {
-  margin-top: -2px;
-}
-
-.sidebar header .toggle {
-  position: absolute;
-  top: 50%;
-  right: -25px;
-  transform: translateY(-50%);
-  height: 25px;
-  width: 25px;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: var(--sidebar-color);
-  font-size: 22px;
-}
-
-.sidebar .search-box {
-  background: var(--primary-color-light);
-}
-
-.search-box input {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 6px;
-  background: var(--primary-color-light);
-}
-
-ul {
-  padding-inline-start: 0;
-}
-
-.sidebar li a {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  border-radius: 6px;
-  align-items: center;
-  text-decoration: none;
-  transition: var(--tran-04);
-}
-
-.sidebar li a:hover {
-  background: var(--primary-color);
-}
-
-.sidebar li a:hover .icon,
-.sidebar li a:hover .text {
-  color: var(--sidebar-color);
-}
-
-.sidebar .menu-bar {
-  height: calc(100% - 50px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.menu-bar .mode {
-  position: relative;
-  border-radius: 6px;
-  background: var(--primary-color-light);
-}
-
-.menu-bar .mode .moon-sun {
-  height: 50px;
-  width: 60px;
-  display: flex;
-  align-items: center;
-}
-
-.menu-bar .mode i {
-  position: absolute;
-}
-
-.menu-bar .mode i.sun {
-  opacity: 0;
-}
-
-.menu-bar .mode .toggle-switch {
-  position: absolute;
-  display: flex;
-  height: 100%;
-  min-width: 60px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  right: 0;
-}
-
-.toggle-switch .switch {
-  position: relative;
-  height: 22px;
-  width: 44px;
-  border-radius: 25px;
-  background: var(--toggle-color);
-}
-
-.switch::before {
-  content: "";
-  position: absolute;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  background: var(--sidebar-color);
-  transition: var(--tran-03);
-}
-
-body.dark .switch::before {
-  left: 24px;
-}
+<style lang="css">
+@import "@/styles/sidebar.css";
 </style>
