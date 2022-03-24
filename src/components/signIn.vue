@@ -143,7 +143,7 @@ export default {
         password: this.password,
       };
       this.axios
-        .post("http://localhost:3000/login", payload)
+        .post("http://localhost:3000/login", payload) //check to see your localhost address for json-server-auth setup
         .then((response) => {
           if (response.status === 200) {
             (this.email = ""), (this.password = "");
@@ -151,7 +151,7 @@ export default {
           } else {
             //
           }
-        })
+        });
     },
   },
   mounted() {},

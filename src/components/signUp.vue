@@ -261,7 +261,7 @@ export default {
         continent: this.continent,
       };
       this.axios
-        .post("http://localhost:3000/register", payload)
+        .post("http://localhost:3000/register", payload) //check to see your localhost address for json-server-auth setup
         .then((response) => {
           if (response.status === 201) {
             (this.email = ""),
