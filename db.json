@@ -8,6 +8,24 @@
       "gender": "1",
       "continent": "2",
       "id": 1
+    },
+    {
+      "email": "jideomotola3@gmail.com",
+      "password": "$2a$10$vTdwZciaFXv5HH0cwvbsbuLTtG/J6OD423SRjauO0ZPBdfzEuXVnG",
+      "firstName": "OLA",
+      "lastName": "OMOTOLA",
+      "gender": "Male",
+      "continent": "Australia",
+      "id": 2
+    },
+    {
+      "email": "jideomotola@gmail.com",
+      "password": "$2a$10$j6.X6/onuZNDieeBS8adruGGtw45E1167tEcWK7tfbbAeGz79tUTe",
+      "firstName": "OLAJIDE",
+      "lastName": "OMOTOLA",
+      "gender": "Female",
+      "continent": "Asia",
+      "id": 3
     }
   ]
 }
