@@ -22,6 +22,13 @@ npm install
 npm run dev
 ```
 
+### Documentation for json-server-auth
+
+```sh
+https://www.npmjs.com/package/json-server-auth
+```
+
+
 ### Compile and Minify for Production
 
 ```sh
