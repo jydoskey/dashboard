@@ -260,26 +260,27 @@ export default {
         gender: this.gender,
         continent: this.continent,
       };
-      var url = window.location.origin;
       this.axios
-        .post(url + "/register", payload)
+        .post("http://localhost:3000/register", payload) //check to see your localhost address for json-server-auth setup
         .then((response) => {
-          console.log(response);
-          (this.email = ""),
-            (this.password = ""),
-            (this.firstName = ""),
-            (this.lastName = ""),
-            (this.gender = ""),
-            (this.continent = "");
-          this.$router.push("/");
-        })
-        .catch((error) => {
-          console.log(error);
+          if (response.status === 201) {
+            (this.email = ""),
+              (this.password = ""),
+              (this.firstName = ""),
+              (this.lastName = ""),
+              (this.gender = ""),
+              (this.continent = "");
+            this.$router.push("/");
+          } else {
+            //
+          }
         });
     },
   },
 
-  mounted() {},
+  mounted() {
+    console.log(window.location.href);
+  },
 };
 </script>
 

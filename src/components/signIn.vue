@@ -142,15 +142,15 @@ export default {
         email: this.email,
         password: this.password,
       };
-      var url = window.location.origin;
       this.axios
-        .post(url + "/login", payload)
+        .post("http://localhost:3000/login", payload) //check to see your localhost address for json-server-auth setup
         .then((response) => {
-          console.log(response);
-          (this.email = ""), (this.password = "");
-        })
-        .catch((error) => {
-          console.log(error);
+          if (response.status === 200) {
+            (this.email = ""), (this.password = "");
+            this.$router.push("/dashboard");
+          } else {
+            //
+          }
         });
     },
   },
